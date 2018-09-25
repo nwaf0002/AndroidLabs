@@ -7,4 +7,6 @@
     <string name="login_name">tinye aha gi</string>
     <string name="password_text">ihe a ji mara gi</string>
     <string name="switch_text">Kee ihe a na-eme?</string>
+    <string name="radio_button">Button nke Radio</string>
+    <string name="check_box">Nkanye</string>
 </resources>
