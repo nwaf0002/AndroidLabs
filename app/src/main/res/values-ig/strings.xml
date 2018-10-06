@@ -9,4 +9,9 @@
     <string name="switch_text">Kee ihe a na-eme?</string>
     <string name="radio_button">Button nke Radio</string>
     <string name="check_box">Nkanye</string>
+    <string name="LoginButtonText">Banye</string>
+    <string name="dialog_message">Ngwucha?</string>
+    <string name="dialog_title">I dikwa sure</string>
+    <string name="ok">EH</string>
+    <string name="cancel">Tuarighia</string>
 </resources>
