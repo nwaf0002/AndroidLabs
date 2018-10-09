@@ -26,14 +26,17 @@ public class LoginActivity extends Activity {
         emailText = findViewById(R.id.editText);
         loginButton = findViewById(R.id.login_button);
 
-        SharedPreferences reader = getSharedPreferences("", MODE_PRIVATE);
-        String emailString = reader.getString("Default Email", "email@domain.com");
+        final SharedPreferences reader = getSharedPreferences("", MODE_PRIVATE);
+        String emailString = reader.getString("DefaultEmail", "email@domain.com");
         emailText.setText(emailString);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                final String input = emailText.getText().toString();
+                final SharedPreferences.Editor editor = reader.edit();
+                editor.putString("DefaultEmail", input);
+                editor.apply();
 
                 Intent startIntent = new Intent(LoginActivity.this, StartActivity.class);
                 startActivity(startIntent);
@@ -45,7 +48,7 @@ public class LoginActivity extends Activity {
     protected void onResume() {
         super.onResume();
         Log.i(ACTIVITY_NAME, "In onResume()");
-        getEmail ();
+        getEmail();
     }
 
     protected void onStart() {

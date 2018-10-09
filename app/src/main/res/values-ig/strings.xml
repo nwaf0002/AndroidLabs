@@ -12,6 +12,11 @@
     <string name="LoginButtonText">Banye</string>
     <string name="dialog_message">Ngwucha?</string>
     <string name="dialog_title">I dikwa sure</string>
-    <string name="ok">EH</string>
+    <string name="ok">Eh</string>
     <string name="cancel">Tuarighia</string>
+    <string name="ChatButtonText">Bido Okwu</string>
+    <string name="sendText">Gawa</string>
+    <string name="textField">Tinye Okwu</string>
+    <string name="textview2">Lee aka ebe a</string>
+
 </resources>

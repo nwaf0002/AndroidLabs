@@ -15,7 +15,7 @@ import static android.widget.RelativeLayout.TRUE;
 public class StartActivity extends Activity {
 
     protected static final String ACTIVITY_NAME = "StartActivity";
-    Button startButton;
+    Button startButton, chatButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,7 @@ public class StartActivity extends Activity {
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
         startButton = findViewById(R.id.start_button);
+        chatButton = findViewById(R.id.chat_button);
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,21 +38,30 @@ public class StartActivity extends Activity {
                 startActivityForResult(listIntent, 50);
                 }
         });
+
+        chatButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+
+                Intent startIntent = new Intent(StartActivity.this, ChatWindow.class);
+                startActivity(startIntent);
+            }
+        });
     }
 
         @Override
         protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Context context = getApplicationContext();
-
-        if (requestCode == 50) {
+        if (requestCode == 50 && resultCode == Activity.RESULT_OK) {
             Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
-        }
-
-        if (resultCode == Activity.RESULT_OK) {
-            String messagePassed = data.getStringExtra("Response");
-            int duration = Toast.LENGTH_LONG;
-            Toast toast = Toast.makeText(context, messagePassed, duration);
-            toast.show(); //display your message box
+            if (data != null) {
+                String messagePassed = data.getStringExtra("Response");
+                int duration = Toast.LENGTH_LONG;
+                Toast toast = Toast.makeText(context, messagePassed, duration);
+                toast.show(); //display your message box
+            }
         }
     }
 

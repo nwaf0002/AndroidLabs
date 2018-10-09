@@ -105,7 +105,7 @@ public class ListItemsActivity extends Activity {
                                 public void onClick(DialogInterface dialog, int id) {
                                 // User clicked OK button
                                     Intent resultIntent = new Intent();
-                                    resultIntent.putExtra("Response", "Here is my response");
+                                    resultIntent.putExtra("Response", "Closed by the checkbox");
                                     setResult(Activity.RESULT_OK, resultIntent);
                                     finish();
                                }
